@@ -1,0 +1,22 @@
+<template name="question">
+  <div class="container">
+    <h1>{{text}}</h1>
+  </div>
+  <div class="container">
+    {{#each players}}
+      <div class="span-4">
+        <div class="span-2">
+          {{name}}
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-success btn-sm">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn btn-danger btn-sm">
+            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</template>

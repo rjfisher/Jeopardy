@@ -1,0 +1,18 @@
+<template name="scoreboard">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each players}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{score}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>

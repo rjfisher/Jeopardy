@@ -7,3 +7,8 @@
 meteor-platform
 autopublish
 insecure
+iron:router
+coffeescript
+sacha:spin
+multiply:iron-router-progress
+twbs:bootstrap
