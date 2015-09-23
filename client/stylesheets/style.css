@@ -1,0 +1,31 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 90%;
+  width: 100%;
+}
+
+footer {
+  width: 100%;
+}
+
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fullheight {
+  height: 100%;
+}

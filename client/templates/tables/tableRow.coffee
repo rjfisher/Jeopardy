@@ -3,11 +3,11 @@ Template.tableRow.helpers
     val = @.valueOf()
     Questions.find({value: val}, sort: category: -1).fetch()
 
-  questionText: ->
+  questionValue: ->
     if @.answered == true
       return ''
     else
-      return @.text
+      return '$' + @.value
 
 Template.tableRow.events
   'click .question': (e) ->
