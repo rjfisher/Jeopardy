@@ -1,3 +1,4 @@
 Template.tableHeader.helpers
   categories: ->
-    Categories.find({}, sort: id: -1)
+    mode = Session.get('mode')
+    Categories.find({mode: mode}, sort: id: 1)

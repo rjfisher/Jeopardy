@@ -4,6 +4,15 @@ html, body {
   margin: 0;
   padding: 0;
   text-align: center;
+  text-shadow: 2px 2px #222222;
+  background-color: #041F9D;
+  color: #C89F61;
+}
+
+.jumbotron {
+  background-color: #041F9D;
+  color: white;
+  text-shadow: 2px 2px #222222;
 }
 
 .container {
@@ -28,4 +37,53 @@ footer {
 
 .fullheight {
   height: 100%;
+}
+
+table {
+  table-layout: fixed;
+  width: 25%;
+}
+
+th {
+  font-family: 'Slabo 27px', serif;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.question {
+  font-family: 'Slabo 27px', serif;
+  font-size: 36px;
+  height: 100px;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+}
+
+.q {
+  height: 100%;
+}
+
+.player {
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 2px #222222;
+}
+
+.score {
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 2px #222222;
+}
+
+.negative {
+  background-color: #C9302C;
+}
+
+.positive {
+  background-color: #449D44;
+}
+
+.footnote {
+  color: gray;
 }

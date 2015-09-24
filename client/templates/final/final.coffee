@@ -1,4 +1,4 @@
-Template.scoreboard.helpers
+Template.final.helpers
   players: ->
     Players.find({}, sort: score: -1).fetch()
 

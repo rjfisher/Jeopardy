@@ -1,0 +1,27 @@
+<template name="final">
+  <div class="container">
+    <main class="row">
+      <div class="jumbotron vertical-center">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each players}}
+              <tr class="{{status}}">
+                <td class="player">{{name}}</td>
+                <td class="score">{{score}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer class="footnote">
+      <p>Created with love by <a href="http://robfisher.us/">Rob Fisher</a>.</p>
+    </footer>
+  </div>
+</template>

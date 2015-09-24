@@ -2,29 +2,23 @@
   <div class="container">
     <main class="row">
       <div class="jumbotron vertical-center">
-        <h1>{{text}}</h1>
+        {{#if final}}
+          <h1>{{finalDisplay}}</h1>
+        {{else}}
+          <h1>{{text}}</h1>
+        {{/if}}
       </div>
     </main>
     <footer class="row">
-      {{#each players}}
-        <div class="col-md-4">
-          <div class="row">
-            <div class="col-md-6">
-              <p class="">{{name}}</p>
-            </div>
-            <div class="col-md-6">
-              <div class="btn-group" role="group">
-                <button type="button" class="btn btn-success btn-sm">
-                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                </button>
-                <button type="button" class="btn btn-danger btn-sm">
-                  <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      {{/each}}
+      {{#if final}}
+        {{#each players}}
+          {{> finalQuestionScoring}}
+        {{/each}}
+      {{else}}
+        {{#each players}}
+          {{> normalQuestionScoring}}
+        {{/each}}
+      {{/if}}
     </footer>
   </div>
 </template>

@@ -1,12 +1,21 @@
 <template name="home">
   <div class="container">
-    <div class="row">
+    <main class="row">
       <div class="col-md-9">
         {{> board}}
       </div>
       <div class="col-md-3">
         {{> scoreboard}}
       </div>
-    </div>
+    </main>
+    <footer class="row">
+      <div class="col-md-12">
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" id="1" class="btn btn-info {{single}}">J</button>
+          <button type="button" id="2" class="btn btn-info {{double}}">D</button>
+          <button type="button" id="3" class="btn btn-info">F</button>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>

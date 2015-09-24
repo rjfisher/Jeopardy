@@ -8,6 +8,10 @@ Router.route '/question/:_id',
   data: ->
     Questions.findOne(@params._id)
 
+Router.route '/final',
+  name: 'final'
+  template: 'final'
+
 Router.route '/',
   name: 'home'
   template: 'home'

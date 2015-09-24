@@ -2,31 +2,27 @@ Template.question.helpers
   players: ->
     Players.find()
 
+  finalDisplay: ->
+    if Session.get 'final'
+      return @.text
+    return @.category
+
+  final: ->
+    if @.mode is 3
+      return true
+    return false
+
 Template.question.events
-  'click .btn-success': (e) ->
-    # Increase the players score
-    q = Session.get 'question'
-    Players.update(@._id, $set: score: @.score + q.value)
-
-    # Mark the question as answered
-    Questions.update(q._id, $set: answered: true)
-
-    # Return to the board
-    Router.go 'home'
-
-  'click .btn-danger': (e) ->
-    # Decrease the players score
-    q = Session.get 'question'
-    Players.update(@._id, $set: score: @.score - q.value)
-
-    # Mark the question as answered
-    Questions.update(q._id, $set: answered: true)
-
-    # Return to the board
-    Router.go 'home'
+  'click h1': (e) ->
+    if Session.get 'final'
+      Session.set 'final', null
+      return
+    Session.set 'final', true
 
 Template.question.rendered = ->
   Session.set 'question', @.data
+  Session.set 'answered', 0
 
 Template.question.destroyed = ->
   Session.set 'question', null
+  Session.set 'answered', 0

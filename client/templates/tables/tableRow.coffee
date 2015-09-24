@@ -1,7 +1,12 @@
 Template.tableRow.helpers
   questions: ->
+    mode = Session.get('mode')
     val = @.valueOf()
-    Questions.find({value: val}, sort: category: -1).fetch()
+
+    Questions.find({
+      value: val
+      mode: mode
+    }, sort: category: 1).fetch()
 
   questionValue: ->
     if @.answered == true
