@@ -8,6 +8,10 @@ Template.finalQuestionScoring.events
     if wager is 0
       answered = Session.get 'answered'
       Session.set('answered', answered + 1)
+      answered = Session.get 'answered'
+      if answered >= 3
+        Session.set 'answered', 0
+        Router.go 'final'
       return
 
     if (wager > score)
@@ -35,6 +39,10 @@ Template.finalQuestionScoring.events
     if wager is 0
       answered = Session.get 'answered'
       Session.set('answered', answered + 1)
+      answered = Session.get 'answered'
+      if answered >= 3
+        Session.set 'answered', 0
+        Router.go 'final'
       return
 
     if (wager > score)
