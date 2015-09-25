@@ -9,6 +9,9 @@ Template.finalQuestionScoring.events
       answered = Session.get 'answered'
       Session.set('answered', answered + 1)
       answered = Session.get 'answered'
+      
+      t.find('[name=wager]').value = ''
+      
       if answered >= 3
         Session.set 'answered', 0
         Router.go 'final'
@@ -23,6 +26,10 @@ Template.finalQuestionScoring.events
 
     Players.update(@._id, $set: score: score + wager)
     Questions.update(q._id, $set: answered: true)
+    
+    t.find('[name=wager]').value = ''
+    $(e.target).find('[name=positive]').prop('disabled', true);
+    $(e.target).find('[name=negative]').prop('disabled', true);
 
     answered = Session.get 'answered'
     if Session.get 'answered' >= 3
@@ -40,6 +47,9 @@ Template.finalQuestionScoring.events
       answered = Session.get 'answered'
       Session.set('answered', answered + 1)
       answered = Session.get 'answered'
+      
+      t.find('[name=wager]').value = ''
+      
       if answered >= 3
         Session.set 'answered', 0
         Router.go 'final'
@@ -56,6 +66,8 @@ Template.finalQuestionScoring.events
     Questions.update(q._id, $set: answered: true)
 
     t.find('[name=wager]').value = ''
+    $(e.target).find('[name=positive]').prop('disabled', true);
+    $(e.target).find('[name=negative]').prop('disabled', true);
 
     answered = Session.get 'answered'
     if answered >= 3
