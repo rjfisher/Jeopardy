@@ -19,6 +19,11 @@ Template.question.events
       return
     Session.set 'final', true
 
+  'click .btn-info': (e) ->
+    # update the question as answered and return home
+    Questions.update(@._id, $set: answered: true)
+    Router.go 'home'
+
 Template.question.rendered = ->
   Session.set 'question', @.data
   Session.set 'answered', 0

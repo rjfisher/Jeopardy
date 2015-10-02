@@ -19,6 +19,3 @@ Template.normalQuestionScoring.events
 
     # Mark the question as answered
     Questions.update(q._id, $set: answered: true)
-
-    # Return to the board
-    Router.go 'home'
